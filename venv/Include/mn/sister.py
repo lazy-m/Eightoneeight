@@ -41,11 +41,10 @@ def get_html_url2(html_url):
 def get_html_url3(html_url):
     """解析图片详情页得到图片url"""
     req =requests.get(html_url)
-    print(req)
-    # if req.status_code ==200:
-    #     html_text =etree.HTML(req.text)
-    #     url_data =html_text.xpath('//div[@class="ImageBody"]//img/@src')
-    #     print(url_data)
+    if req.status_code ==200:
+        html_text =etree.HTML(req.text)
+        url_data =html_text.xpath('//div[@class="ImageBody"]//img/@src')
+        print(url_data)
 
 
 def show_data(data):
